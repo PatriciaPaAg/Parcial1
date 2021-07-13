@@ -1,117 +1,144 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
 
 
-<script>
+    <script>
 
-let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogelio','Bertha'];
-
-
-/*
-
-Funciones 1 -  Crea una funcion llamada "mayusculas" que:
-- reciba como argumento el arreglo "nombres" y convierta todos los nombres a mayusula.
-- Los debe escribir en la consola convertidos.
-*/
-
-// CREA TU FUNCION MAYUSCULAS aqui:
+        let nombres = ['Jorge', 'Isabel', 'Juan', 'Pedro', 'Karina', 'Jose', 'Arturo', 'Rogelio', 'Bertha'];
 
 
+        /*
+        Funciones 1 -  Crea una funcion llamada "mayusculas" que:
+        - reciba como argumento el arreglo "nombres" y convierta todos los nombres a mayusula.
+        - Los debe escribir en la consola convertidos.
+        */
+
+        // CREA TU FUNCION MAYUSCULAS aqui:
+
+        function mayusculas(nombres) {
+            for (let i = 0; i < nombres.length; i++) {
+                nombres[i] = nombres[i].toUpperCase();
+                console.log(nombres[i]);
+            }
+        }
+
+        /*
+        Funciones 2 -  Crea una funcion llamada "calculateDogAge" que: 
+        
+        - reciba como argumento le edad del perro.
+        - realice el cálculo de la edad en base a la conversión 1 año humano = 7 años perro.  
+        - Deberá escribir en consola "Tu perro tiene NN años perro"
+        - EJ:   calculateDogAge(2)  -> "Tu pero tiene 14 años perro"
+        
+        */
+
+        // CREA TU FUNCION calculateDogAge aqui:
+
+        function calculateDogAge(age) {
+            let dogAge = age * 7;
+            console.log(`"Tu perro tiene ${dogAge} años perro"`);
+        }
 
 
-/*
-Funciones 2 -  Crea una funcion llamada "calculateDogAge" que: 
-
-- reciba como argumento le edad del perro.
-- realice el cálculo de la edad en base a la conversión 1 año humano = 7 años perro.  
-- Deberá escribir en consola "Tu perro tiene NN años perro"
-- EJ:   calculateDogAge(2)  -> "Tu pero tiene 14 años perro"
-
-*/
-
-// CREA TU FUNCION calculateDogAge aqui:
-
-
-
-
-
-/*
-
-### Funciones 3 - Crea 2 funciones. Una llamada celsiusToFahrenheit que:
-
-- reciba un número y lo convierta de celsius a Fahrenheit , posteriormente que escriba el resultado en consola.
-
-y otra llamada fahrenheitToCelsius que:
-
-- reciba un número y lo convierta de Fahrenheit a Celsius ,  posteriormente que escriba el resultado en consola.
-
-La conversion deberá ser un numero entero para ambas (sin decimales)
-
-EJ:  
-
-
-celsiusToFahrenheit(35)  --> 95
-
-fahrenheitToCelsius(95) --> 35
-
-*/
-
-
-
-
-// CREA TUS FUNCIONES  aqui:
-
-
+        /*
+        
+        ### Funciones 3 - Crea 2 funciones. Una llamada celsiusToFahrenheit que:
+        
+        - reciba un número y lo convierta de celsius a Fahrenheit , posteriormente que escriba el resultado en consola.
+        
+        y otra llamada fahrenheitToCelsius que:
+        
+        - reciba un número y lo convierta de Fahrenheit a Celsius ,  posteriormente que escriba el resultado en consola.
+        
+        La conversion deberá ser un numero entero para ambas (sin decimales)
+        
+        EJ:  
+        
+        
+        celsiusToFahrenheit(35)  --> 95
+        
+        fahrenheitToCelsius(95) --> 35
+        
+        */
 
 
 
 
-/*  OBJETOS 
+        // CREA TUS FUNCIONES  aqui:
 
-A) Define un objeto tipo "Perro" que reciba 3 parametros
+        function celsiusToFahrenheit(cel) {
+            let fah = (9 / 5 * cel) + 32;
+            //console.log(`${cel} celsius = ${fah} fahrenheit`);
+            console.log(`${fah}`);
+        }
 
-1) Nombre
-2) Color
-3) Raza
-
-
-B) Crea 3 objectos  con diferentes valores.
-
-C) Con un console.log escribe el nombre del primer objeto, el color del segundo, y la raza del tercero. Lo puedes hacer en una sola línea o en 3 lineas aparte. 
-
-
-*/
+        function fahrenheitToCelsius(fah) {
+            let cel = (fah - 32) * (5 / 9);
+            //console.log(`${fah} fahrenheit = ${cel} celsius`);
+            console.log(`${cel}`);
+        }
 
 
 
-/***
- * 
- *        PRUEBA TUS FUNCIONES
- * 
- ***/
+        /*  OBJETOS 
+        
+        A) Define un objeto tipo "Perro" que reciba 3 parametros
+        
+        1) Nombre
+        2) Color
+        3) Raza
+        
+        
+        B) Crea 3 objectos  con diferentes valores.
+        
+        C) Con un console.log escribe el nombre del primer objeto, el color del segundo, y la raza del tercero. Lo puedes hacer en una sola línea o en 3 lineas aparte. 
+        
+        
+        */
+
+        function Perro(name, colour, race) {
+            this.nombre = name;
+            this.color = colour;
+            this.raza = race;
+        }
+
+        var nala = new Perro('Nala', 'white', 'maltes');
+        var mark = new Perro('Mark', 'black', 'husky');
+        var canela = new Perro('Canela', 'cafe', 'doberman');
 
 
-mayusculas(nombres);
-calculateDogAge(4);
-celsiusToFahrenheit(35)
-fahrenheitToCelsius(95)
+        /***
+         * 
+         *        PRUEBA TUS FUNCIONES
+         * 
+         ***/
+
+
+        mayusculas(nombres);
+        calculateDogAge(4);
+        celsiusToFahrenheit(35)
+        fahrenheitToCelsius(95)
 
 
 
 
 
-/***
- * 
- *        PRUEBA TUS OBJETOS AQUI
- * 
- ***/
+        /***
+         * 
+         *        PRUEBA TUS OBJETOS AQUI
+         * 
+         ***/
 
+        console.log(`Nombre: ${nala.nombre},
+Color: ${mark.color},
+Raza: ${canela.raza}`)
 
-</script>
+    </script>
 
 </head>
 
